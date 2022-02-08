@@ -26,4 +26,4 @@ jobs:
           docker-compose -f "docker-compose.yml" build
       - name: Push from Docker
         run: |
-          docker-compose push
+          docker-compose -f "docker-compose.yml" push --ignore-push-failures
