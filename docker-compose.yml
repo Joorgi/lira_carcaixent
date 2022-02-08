@@ -1,21 +1,68 @@
-version: '3'
+version: '3.9'
 
 services:
-###> doctrine/doctrine-bundle ###
-  database:
-    image: postgres:${POSTGRES_VERSION:-13}-alpine
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      # You should definitely change the password in production
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
-      POSTGRES_USER: ${POSTGRES_USER:-symfony}
+  ###> Nginx ###
+  nginx:
+    image: nginx:latest
+    container_name: nginx-server
+    networks:
+      - redlira
+    ports:
+      - "4200:4200"
+
+  ###< Nginx ###
+
+  ###> Php ###
+  php:
+    container_name: php-8.0
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    networks:
+      - redlira
     volumes:
-      - db-data:/var/lib/postgresql/data:rw
-      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-      # - ./docker/db/data:/var/lib/postgresql/data:rw
-###< doctrine/doctrine-bundle ###
+      - .:/var/www/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    ###< Php ###
+
+
+    ###> doctrine/doctrine-bundle ###
+  database:
+    image: mysql:latest
+    container_name: mysql
+    networks:
+      - redlira
+    environment:
+      - MYSQL_ROOT_PASSWORD=liraFlorida2022
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    ###< doctrine/doctrine-bundle ###
+
+    ###> PhpMyAdmin ###
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    networks:
+      - redlira
+    environment:
+      - PMA_HOST=database
+      - MYSQL_ROOT_PASSWORD=liraFlorida2022
+      - PMA_PORT=3306
+    ports:
+      - "8081:8081"
+  ###< PHpMyAdmin ###
 
 volumes:
-###> doctrine/doctrine-bundle ###
+  ###> doctrine/doctrine-bundle ###
   db-data:
-###< doctrine/doctrine-bundle ###
+    ###< doctrine/doctrine-bundle ###
+
+networks:
+  redlira:
+    driver: bridge
