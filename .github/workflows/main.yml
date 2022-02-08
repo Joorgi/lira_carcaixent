@@ -13,7 +13,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  docker-login:
+  CI:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -26,4 +26,9 @@ jobs:
           docker-compose -f "docker-compose.yml" build
       - name: Push from Docker
         run: |
-          docker-compose -f "docker-compose.yml" push --ignore-push-failures
+          composeServices = readYaml('docker-compose.yaml').services
+          image1 = composeServices.nginx.image
+          image2 = composeServices.php.build
+          image3 = composeServices.database.image
+          image4 = composeServices.phpmyadmin.image
+          docker push image1 image2 image3 image4
