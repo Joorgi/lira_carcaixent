@@ -18,12 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build the stack
-        run: docker-compose -f "docker-compose.yml" up -d
+        run: docker compose -f "docker-compose.yml" up -d
       - name: Docker Login
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
         run: |
-          docker-compose -f "docker-compose.yml" build --pull
+          docker compose -f "docker-compose.yml" build --pull
       - name: Push from Docker
         run: |
-          docker-compose push
+          docker compose -f "docker-compose.yml" push
