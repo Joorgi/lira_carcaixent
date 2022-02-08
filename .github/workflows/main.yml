@@ -17,18 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Docker Login
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build the stack
         run: docker-compose -f "docker-compose.yml" up -d
+      - name: Docker Login
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
         run: |
-          docker-compose -f "docker-compose.yml" build
+          docker-compose -f "docker-compose.yml" build --pull
       - name: Push from Docker
         run: |
-          composeServices = readYaml('docker-compose.yaml').services
-          image1 = composeServices.nginx.image
-          image2 = composeServices.php.build
-          image3 = composeServices.database.image
-          image4 = composeServices.phpmyadmin.image
-          docker push image1 image2 image3 image4
+          docker-compose push
