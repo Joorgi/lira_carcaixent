@@ -26,5 +26,4 @@ jobs:
           docker-compose -f "docker-compose.yml" build
       - name: Push from Docker
         run: |
-          docker-compose -f "docker-compose.yml" push ${{ secrets.DOCKER_USERNAME }}/backend-lira:${{ github.sha }}
           docker-compose -f "docker-compose.yml" push ${{ secrets.DOCKER_USERNAME }}/backend-lira:latest
