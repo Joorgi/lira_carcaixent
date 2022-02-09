@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NoticiaRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: NoticiaRepository::class)]
 class Noticia
@@ -23,6 +24,7 @@ class Noticia
     private $descripcion;
 
     #[ORM\Column(name: 'IMAGEN', type: 'string', length: 255, nullable: true)]
+    #[Assert\File(mimeTypes: ['image/jpeg', 'image/png', 'image/jpg'])]
     private $imagen;
 
     public function getId(): ?int

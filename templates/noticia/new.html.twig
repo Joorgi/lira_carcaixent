@@ -1,0 +1,10 @@
+{% extends 'main.html.twig' %}
+
+{% block title %}New Noticia
+{% endblock %}
+
+{% block formSection %}
+	<a href="{{ path('home') }}">back to list</a>
+	<h1 class='text-center'>Añadir nueva noticia</h1>
+	{{ include('noticia/_form.html.twig') }}
+{% endblock %}
