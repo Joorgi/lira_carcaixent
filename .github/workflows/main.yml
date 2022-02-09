@@ -26,5 +26,5 @@ jobs:
           docker compose -f "docker-compose.yml" build --pull
       - name: Push from Docker
         run: |
-          docker compose -f "docker-compose.yml" push
+          docker compose push nginx
 #eee
