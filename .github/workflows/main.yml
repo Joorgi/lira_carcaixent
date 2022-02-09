@@ -27,3 +27,4 @@ jobs:
       - name: Push from Docker
         run: |
           docker compose -f "docker-compose.yml" push
+#eee
