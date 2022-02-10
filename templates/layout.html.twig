@@ -1,5 +1,4 @@
 {% extends "base.html.twig" %}
-
 {% block body %}
 	<header>
 		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
@@ -11,15 +10,35 @@
 				<div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
 					<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
 						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
-								Noticias
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
+							{% if false %}
+								<a class='nav-link dropdown-toggle active' href='/' id='navbarDropdown' role='button' data-bs-toggle='dropdown' data-target='#dropdown1' aria-expanded='false'>
+									Noticias
+								</a>
+							{% else %}
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown' role='button' data-bs-toggle='dropdown' data-target='#dropdown1' aria-expanded='false'>
+									Noticias
+								</a>
+							{% endif %}
+							<ul class='dropdown-menu' aria-labelledby='navbarDropdown' id='dropdown1'>
 								<li>
-									<a class='dropdown-item' href='admin/noticia/new'>Crear</a>
+									<a class='dropdown-item' href='/admin/noticia/new'>Crear</a>
 								</li>
 								<li>
-									<a class='dropdown-item' href='#'>Listar</a>
+									<a class='dropdown-item' href='/admin/noticia/all'>Listar</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class='nav-item dropdown'>
+							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown2' role='button' data-bs-toggle='dropdown' data-target='#dropdown2' aria-expanded='false'>
+								Bandas
+							</a>
+							<ul class='dropdown-menu' aria-labelledby='navbarDropdown2' id='dropdown2'>
+								<li>
+									<a class='dropdown-item' href='/admin/banda/new'>Crear</a>
+								</li>
+								<li>
+									<a class='dropdown-item' href='/admin/banda/all'>Listar</a>
 								</li>
 							</ul>
 						</li>
@@ -37,7 +56,7 @@
 
 
 	<div class='container-fluid'>
-		<footer>
+		<footer class='fixed-bottom'>
 			<div class='row bg-danger'>
 				<div class='col-xl-12 text-center d-flex justify-content-center align-self-center'>
 					<ul class='list-inline pt-3'>

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Noticia;
 use App\Form\NoticiaType;
+use App\Repository\NoticiaRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +17,14 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 #[Route('/admin/noticia')]
 class NoticiaController extends AbstractController
 {
+
+    #[Route('/all', name: 'noticia_index', methods: ['GET'])]
+    public function index(NoticiaRepository $noticiaRepository): Response
+    {
+        return $this->render('noticia/index.html.twig', [
+            'noticias' => $noticiaRepository->findAll(),
+        ]);
+    }
 
     #[Route('/new', name: 'noticia_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
