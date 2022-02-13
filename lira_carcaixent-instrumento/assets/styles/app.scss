@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+
+.hover-red:hover {
+    color: red;
+}
+
+.hover-blue:hover {
+    color: blue;
+}
