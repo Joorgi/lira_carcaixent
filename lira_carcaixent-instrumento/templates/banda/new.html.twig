@@ -1,0 +1,11 @@
+{% extends 'main.html.twig' %}
+
+{% block title %}New Banda{% endblock %}
+
+{% block formSection %}
+    <h1>Create new Banda</h1>
+
+    {{ include('banda/_form.html.twig') }}
+
+    <a href="{{ path('banda_index') }}">back to list</a>
+{% endblock %}

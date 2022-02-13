@@ -1,0 +1,39 @@
+<article class='bg-primary' style='height: 791px;'>
+	<div class='row'>
+		<div class='col-xl-12 col-lg-12 text-center' style='height: 707px;'>
+			{{ form_start(form, {'attr': {'class': 'mt-5 offset-4'}}) }}
+			<div class='input-group mb-6 pb-5'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.titulo, 'TITULO') }}
+					{{ form_widget(form.titulo,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+			</div>
+
+			<div class='input-group mb-6 pb-5'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.fecha, 'FECHA') }}
+					{{ form_widget(form.fecha,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+			</div>
+			<div class='input-group mb-6 pb-5'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.imagen, 'IMAGEN (JPEG,PNG,JPG)') }}
+					{{ form_widget(form.imagen,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+			</div>
+			<div class='input-group mb-6 pb-3'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.descripcion, 'DESCRIPCIÓN') }}
+					{{ form_widget(form.descripcion,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+
+				<div class='input-group mt-5'>
+					<div class='form-group col-md-6'>
+						<button class='btn btn-primary btn-lg'>{{ button_label|default('Save') }}</button>
+					</div>
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+</article>

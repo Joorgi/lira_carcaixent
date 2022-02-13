@@ -1,0 +1,80 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<header>
+		<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+			<div class='container-fluid'>
+				<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo03' aria-controls='navbarTogglerDemo03' aria-expanded='false' aria-label='Toggle navigation'>
+					<span class='navbar-toggler-icon'></span>
+				</button>
+				<a class='navbar-brand' href='/'>Navbar</a>
+				<div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
+					<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+						<li class='nav-item dropdown'>
+							{% if false %}
+								<a class='nav-link dropdown-toggle active' href='/' id='navbarDropdown' role='button' data-bs-toggle='dropdown' data-target='#dropdown1' aria-expanded='false'>
+									Noticias
+								</a>
+							{% else %}
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown' role='button' data-bs-toggle='dropdown' data-target='#dropdown1' aria-expanded='false'>
+									Noticias
+								</a>
+							{% endif %}
+							<ul class='dropdown-menu' aria-labelledby='navbarDropdown' id='dropdown1'>
+								<li>
+									<a class='dropdown-item' href='/admin/noticia/new'>Crear</a>
+								</li>
+								<li>
+									<a class='dropdown-item' href='/admin/noticia/all'>Listar</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class='nav-item dropdown'>
+							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown2' role='button' data-bs-toggle='dropdown' data-target='#dropdown2' aria-expanded='false'>
+								Bandas
+							</a>
+							<ul class='dropdown-menu' aria-labelledby='navbarDropdown2' id='dropdown2'>
+								<li>
+									<a class='dropdown-item' href='/admin/banda/new'>Crear</a>
+								</li>
+								<li>
+									<a class='dropdown-item' href='/admin/banda/all'>Listar</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<section>
+		<div class='container'>
+			{% block formSection %}{% endblock %}
+		</div>
+	</section>
+
+
+	<div class='container-fluid'>
+		<footer class='fixed-bottom'>
+			<div class='row bg-danger'>
+				<div class='col-xl-12 text-center d-flex justify-content-center align-self-center'>
+					<ul class='list-inline pt-3'>
+						<li class='list-inline-item'>
+							<i class='pr-2 fa fa-facebook fa-2x'></i>
+						</li>
+						<li class='list-inline-item'>
+							<i class='pr-2 fa fa-twitter fa-2x'></i>
+						</li>
+						<li class='list-inline-item'>
+							<i class='pr-2 fa fa-linkedin fa-2x'></i>
+						</li>
+						<li class='list-inline-item'>
+							<i class='fa fa-instagram fa-2x'></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+{% endblock %}
