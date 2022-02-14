@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Instrumento{% endblock %}
+
+{% block body %}
+    <h1>Create new Instrumento</h1>
+
+    {{ include('instrumento/_form.html.twig') }}
+
+    <a href="{{ path('instrumento_index') }}">back to list</a>
+{% endblock %}

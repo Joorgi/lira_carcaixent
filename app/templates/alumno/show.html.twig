@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alumno{% endblock %}
+
+{% block body %}
+    <h1>Alumno</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ alumno.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ alumno.Nombre }}</td>
+            </tr>
+            <tr>
+                <th>PrimerApellido</th>
+                <td>{{ alumno.primerApellido }}</td>
+            </tr>
+            <tr>
+                <th>SegundoApellido</th>
+                <td>{{ alumno.segundoApellido }}</td>
+            </tr>
+            <tr>
+                <th>FechaAlta</th>
+                <td>{{ alumno.fechaAlta ? alumno.fechaAlta|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FechaBaja</th>
+                <td>{{ alumno.fechaBaja ? alumno.fechaBaja|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('alumno_index') }}">back to list</a>
+
+    <a href="{{ path('alumno_edit', {'id': alumno.id}) }}">edit</a>
+
+    {{ include('alumno/_delete_form.html.twig') }}
+{% endblock %}
