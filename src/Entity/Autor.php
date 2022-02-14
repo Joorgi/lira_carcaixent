@@ -2,19 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\BandaRepository;
+use App\Repository\AutorRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: BandaRepository::class)]
-class Banda
+#[ORM\Entity(repositoryClass: AutorRepository::class)]
+class Autor
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name: 'ID', type: 'integer')]
+    #[ORM\Column(name: 'ID',type: 'integer')]
     private $id;
 
     #[ORM\Column(name: 'NOMBRE', type: 'string', length: 50)]
-    private $nombre;
+    private $Nombre;
 
     public function getId(): ?int
     {
@@ -23,12 +23,12 @@ class Banda
 
     public function getNombre(): ?string
     {
-        return $this->nombre;
+        return $this->Nombre;
     }
 
-    public function setNombre(string $nombre): self
+    public function setNombre(string $Nombre): self
     {
-        $this->nombre = $nombre;
+        $this->Nombre = $Nombre;
 
         return $this;
     }
