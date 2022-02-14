@@ -14,9 +14,9 @@ class Socio
     private $id;
 
     #[ORM\Column(name: 'NOMBRE', type: 'string', length: 50)]
-    private $Nombre;
+    private $nombre;
 
-    #[ORM\Column(name: 'PRIMER_APELLIDO',type: 'string', length: 50)]
+    #[ORM\Column(name: 'PRIMER_APELLIDO', type: 'string', length: 50)]
     private $primerApellido;
 
     #[ORM\Column(name: 'SEGUNDO_APELLIDO', type: 'string', length: 50, nullable: true)]
@@ -34,6 +34,11 @@ class Socio
     #[ORM\Column(name: 'TIPO', type: 'string', length: 50)]
     private $Tipo;
 
+    public function __toString()
+    {
+        return $this->nombre;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -41,12 +46,12 @@ class Socio
 
     public function getNombre(): ?string
     {
-        return $this->Nombre;
+        return $this->nombre;
     }
 
-    public function setNombre(string $Nombre): self
+    public function setNombre(string $nombre): self
     {
-        $this->Nombre = $Nombre;
+        $this->nombre = $nombre;
 
         return $this;
     }

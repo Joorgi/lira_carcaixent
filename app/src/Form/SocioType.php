@@ -6,6 +6,7 @@ use App\Entity\Socio;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class SocioType extends AbstractType
 {
@@ -16,10 +17,15 @@ class SocioType extends AbstractType
             ->add('primerApellido')
             ->add('segundoApellido')
             ->add('DNI')
-            ->add('fechaAlta')
-            ->add('fechaBaja')
-            ->add('Tipo')
-        ;
+            ->add('fechaAlta', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+            ])
+            ->add('fechaBaja', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+            ])
+            ->add('Tipo');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

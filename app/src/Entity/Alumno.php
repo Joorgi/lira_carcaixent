@@ -28,9 +28,14 @@ class Alumno
     #[ORM\Column(name: 'FECHA_BAJA', type: 'datetime', nullable: true)]
     private $fechaBaja;
 
-    #[ORM\ManyToOne(targetEntity:Socio::class)]
-    #[ORM\JoinColumn(name: 'ID_SOCIO', referencedColumnName: 'ID', nullable: false)]
+    #[ORM\ManyToOne(targetEntity: Socio::class)]
+    #[ORM\JoinColumn(name: 'ID_SOCIO', referencedColumnName: 'ID', nullable: true)]
     private $idSocio;
+
+    public function __toString()
+    {
+        return $this->Nombre;
+    }
 
     public function getId(): ?int
     {

@@ -6,6 +6,7 @@ use App\Entity\Evento;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class EventoType extends AbstractType
 {
@@ -13,11 +14,13 @@ class EventoType extends AbstractType
     {
         $builder
             ->add('Nombre')
-            ->add('Fecha')
+            ->add('Fecha', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+            ])
             ->add('Lugar')
             ->add('Banda')
-            ->add('idPieza')
-        ;
+            ->add('idPieza');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

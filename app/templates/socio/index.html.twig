@@ -1,47 +1,33 @@
 {% extends 'main.html.twig' %}
 
-{% block title %}Socio index{% endblock %}
+{% block title %}Socio index
+{% endblock %}
 
 {% block formSection %}
-    <h1>Socio index</h1>
+	<h1>Socio index</h1>
+	<table class='table'>
+		<tr>
+			{# sorting of properties based on query components #}
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>PrimerApellido</th>
+			<th>FechaAlta</th>
+			<th>actions</th>
+		</tr>
+	</th>
+</tr>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>PrimerApellido</th>
-                <th>SegundoApellido</th>
-                <th>DNI</th>
-                <th>FechaAlta</th>
-                <th>FechaBaja</th>
-                <th>Tipo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for socio in socios %}
-            <tr>
-                <td>{{ socio.id }}</td>
-                <td>{{ socio.Nombre }}</td>
-                <td>{{ socio.primerApellido }}</td>
-                <td>{{ socio.segundoApellido }}</td>
-                <td>{{ socio.DNI }}</td>
-                <td>{{ socio.fechaAlta ? socio.fechaAlta|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ socio.fechaBaja ? socio.fechaBaja|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ socio.Tipo }}</td>
-                <td>
-                    <a href="{{ path('socio_show', {'id': socio.id}) }}">show</a>
-                    <a href="{{ path('socio_edit', {'id': socio.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('socio_new') }}">Create new</a>
-{% endblock %}
+{# table body #}
+{% for article in pagination %}
+	<tr {% if loop.index is odd %} class='color' {% endif %}>
+		<td>{{ article.id }}</td>
+		<td>{{ article.Nombre }}</td>
+		<td>{{ article.primerApellido }}</td>
+		<td>{{ article.fechaAlta ? article.fechaAlta|date('d-m-Y') : '' }}</td>
+		<td>
+			<a href="{{ path('socio_show', {'id': article.id}) }}">show</a>
+			<a href="{{ path('socio_edit', {'id': article.id}) }}">edit</a>
+		</td>
+	</tr>
+{% endfor %}</table>{# display navigation #}<div class='navigation d-flex justify-content-center'>
+{{ knp_pagination_render(pagination) }}</div>{% endblock %}

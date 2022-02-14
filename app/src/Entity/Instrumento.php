@@ -16,6 +16,11 @@ class Instrumento
     #[ORM\Column(name: 'NOMBRE', type: 'string', length: 50)]
     private $Nombre;
 
+    public function __toString()
+    {
+        return $this->Nombre;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
