@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Instrumento{% endblock %}
+
+{% block body %}
+    <h1>Edit Instrumento</h1>
+
+    {{ include('instrumento/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('instrumento_index') }}">back to list</a>
+
+    {{ include('instrumento/_delete_form.html.twig') }}
+{% endblock %}

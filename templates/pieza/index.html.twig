@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pieza index{% endblock %}
+
+{% block body %}
+    <h1>Pieza index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pieza in piezas %}
+            <tr>
+                <td>{{ pieza.id }}</td>
+                <td>{{ pieza.Nombre }}</td>
+                <td>
+                    <a href="{{ path('pieza_show', {'id': pieza.id}) }}">show</a>
+                    <a href="{{ path('pieza_edit', {'id': pieza.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pieza_new') }}">Create new</a>
+{% endblock %}

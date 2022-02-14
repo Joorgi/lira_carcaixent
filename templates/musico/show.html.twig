@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Musico{% endblock %}
+
+{% block body %}
+    <h1>Musico</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ musico.id }}</td>
+            </tr>
+            <tr>
+                <th>IdSocio</th>
+                <td>{{ musico.idSocio }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ musico.Nombre }}</td>
+            </tr>
+            <tr>
+                <th>PrimerApellido</th>
+                <td>{{ musico.primerApellido }}</td>
+            </tr>
+            <tr>
+                <th>SegundoApellido</th>
+                <td>{{ musico.segundoApellido }}</td>
+            </tr>
+            <tr>
+                <th>DNI</th>
+                <td>{{ musico.DNI }}</td>
+            </tr>
+            <tr>
+                <th>IdInstrumento</th>
+                <td>{{ musico.idInstrumento }}</td>
+            </tr>
+            <tr>
+                <th>IdBanda</th>
+                <td>{{ musico.idBanda }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('musico_index') }}">back to list</a>
+
+    <a href="{{ path('musico_edit', {'id': musico.id}) }}">edit</a>
+
+    {{ include('musico/_delete_form.html.twig') }}
+{% endblock %}

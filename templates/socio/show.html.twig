@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Socio{% endblock %}
+
+{% block body %}
+    <h1>Socio</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ socio.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ socio.Nombre }}</td>
+            </tr>
+            <tr>
+                <th>PrimerApellido</th>
+                <td>{{ socio.primerApellido }}</td>
+            </tr>
+            <tr>
+                <th>SegundoApellido</th>
+                <td>{{ socio.segundoApellido }}</td>
+            </tr>
+            <tr>
+                <th>DNI</th>
+                <td>{{ socio.DNI }}</td>
+            </tr>
+            <tr>
+                <th>FechaAlta</th>
+                <td>{{ socio.fechaAlta ? socio.fechaAlta|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>FechaBaja</th>
+                <td>{{ socio.fechaBaja ? socio.fechaBaja|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ socio.Tipo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('socio_index') }}">back to list</a>
+
+    <a href="{{ path('socio_edit', {'id': socio.id}) }}">edit</a>
+
+    {{ include('socio/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Musico index{% endblock %}
+
+{% block body %}
+    <h1>Musico index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IdSocio</th>
+                <th>Nombre</th>
+                <th>PrimerApellido</th>
+                <th>SegundoApellido</th>
+                <th>DNI</th>
+                <th>IdInstrumento</th>
+                <th>IdBanda</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for musico in musicos %}
+            <tr>
+                <td>{{ musico.id }}</td>
+                <td>{{ musico.idSocio }}</td>
+                <td>{{ musico.Nombre }}</td>
+                <td>{{ musico.primerApellido }}</td>
+                <td>{{ musico.segundoApellido }}</td>
+                <td>{{ musico.DNI }}</td>
+                <td>{{ musico.idInstrumento }}</td>
+                <td>{{ musico.idBanda }}</td>
+                <td>
+                    <a href="{{ path('musico_show', {'id': musico.id}) }}">show</a>
+                    <a href="{{ path('musico_edit', {'id': musico.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('musico_new') }}">Create new</a>
+{% endblock %}

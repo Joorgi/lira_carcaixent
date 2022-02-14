@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Partitura{% endblock %}
+
+{% block body %}
+    <h1>Edit Partitura</h1>
+
+    {{ include('partitura/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('partitura_index') }}">back to list</a>
+
+    {{ include('partitura/_delete_form.html.twig') }}
+{% endblock %}
