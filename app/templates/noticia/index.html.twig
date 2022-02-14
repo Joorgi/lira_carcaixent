@@ -1,0 +1,45 @@
+{% extends 'main.html.twig' %}
+
+{% block title %}Noticia index
+{% endblock %}
+
+{% block formSection %}
+	<h1>Noticia index</h1>
+
+	<table class='table table-striped'>
+		<thead class='text-center'>
+			<tr>
+				<th>Id</th>
+				<th>Titulo</th>
+				<th>Fecha</th>
+				<th>Descripcion</th>
+				<th>Imagen</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for noticium in noticias %}
+				<tr class='text-center align-middle text-capitalize'>
+					<td>{{ noticium.id }}</td>
+					<td>{{ noticium.titulo }}</td>
+					<td>{{ noticium.fecha ? noticium.fecha|date('d-m-Y') : '' }}</td>
+					<td>{{ noticium.descripcion }}</td>
+					<td>{{ noticium.imagen }}</td>
+					<td>
+						<a class='btn hover-blue' href="{{ path('noticia_edit', {'id': noticium.id}) }}">
+							<i class='fa-solid fa-pen-to-square'></i>
+						</a>
+					</td>
+					<td>
+						{{ include('noticia/_delete_form.html.twig') }}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan='6'>no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
