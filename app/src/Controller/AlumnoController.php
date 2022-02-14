@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/alumno')]
+#[Route('admin/alumno')]
 class AlumnoController extends AbstractController
 {
-    #[Route('/', name: 'alumno_index', methods: ['GET'])]
+    #[Route('/all', name: 'alumno_index', methods: ['GET'])]
     public function index(AlumnoRepository $alumnoRepository): Response
     {
         return $this->render('alumno/index.html.twig', [

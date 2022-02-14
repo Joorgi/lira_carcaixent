@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/socio')]
+#[Route('/admin/socio')]
 class SocioController extends AbstractController
 {
-    #[Route('/', name: 'socio_index', methods: ['GET'])]
+    #[Route('/all', name: 'socio_index', methods: ['GET'])]
     public function index(SocioRepository $socioRepository): Response
     {
         return $this->render('socio/index.html.twig', [

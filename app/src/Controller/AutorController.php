@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/autor')]
+#[Route('admin/autor')]
 class AutorController extends AbstractController
 {
-    #[Route('/', name: 'autor_index', methods: ['GET'])]
+    #[Route('/all', name: 'autor_index', methods: ['GET'])]
     public function index(AutorRepository $autorRepository): Response
     {
         return $this->render('autor/index.html.twig', [

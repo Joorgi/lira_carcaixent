@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/evento')]
+#[Route('admin/evento')]
 class EventoController extends AbstractController
 {
-    #[Route('/', name: 'evento_index', methods: ['GET'])]
+    #[Route('/all', name: 'evento_index', methods: ['GET'])]
     public function index(EventoRepository $eventoRepository): Response
     {
         return $this->render('evento/index.html.twig', [

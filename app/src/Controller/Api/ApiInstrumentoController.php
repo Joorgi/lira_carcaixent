@@ -44,11 +44,11 @@ class ApiInstrumentoController extends AbstractController
   {
     $instrumento = $this->instrumentoRepository->find($id);
     $data = [
-        'id' => $instrumento->getId(),
-        'nombre' => $instrumento->getNombre(),
+      'id' => $instrumento->getId(),
+      'nombre' => $instrumento->getNombre(),
     ];
 
-    if (!$musico) {
+    if (!$instrumento) {
       throw new NotFoundHttpException('Not found results!');
     }
     return new JsonResponse($data, Response::HTTP_OK);

@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/partitura')]
+#[Route('admin/partitura')]
 class PartituraController extends AbstractController
 {
-    #[Route('/', name: 'partitura_index', methods: ['GET'])]
+    #[Route('/all', name: 'partitura_index', methods: ['GET'])]
     public function index(PartituraRepository $partituraRepository): Response
     {
         return $this->render('partitura/index.html.twig', [

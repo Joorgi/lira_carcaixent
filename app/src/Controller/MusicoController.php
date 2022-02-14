@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/musico')]
+#[Route('admin/musico')]
 class MusicoController extends AbstractController
 {
-    #[Route('/', name: 'musico_index', methods: ['GET'])]
+    #[Route('/all', name: 'musico_index', methods: ['GET'])]
     public function index(MusicoRepository $musicoRepository): Response
     {
         return $this->render('musico/index.html.twig', [

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 #[Route('/api')]
-class ApiNoticiaController extends AbstractController
+class ApiBandaController extends AbstractController
 {
   private $bandaRepository;
 
