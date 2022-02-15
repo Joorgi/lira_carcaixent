@@ -40,4 +40,5 @@ RUN apt-get update && apt-get install symfony-cli
 
 COPY ./docker/xdebug/xdebug.ini $PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini
 COPY ./docker/opcache/opcache.ini $PHP_INI_DIR/conf.d/ddocker-php-ext-opcache.ini
+CMD ["symfony","server:start"]
 WORKDIR /var/www/backend

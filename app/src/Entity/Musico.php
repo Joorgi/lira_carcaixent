@@ -13,7 +13,7 @@ class Musico
     #[ORM\Column(name: 'ID', type: 'integer')]
     private $id;
 
-    #[ORM\ManyToOne(targetEntity:Alumno::class)]
+    #[ORM\ManyToOne(targetEntity: Alumno::class)]
     #[ORM\JoinColumn(name: 'ID_ALUMNO', referencedColumnName: 'ID', nullable: false)]
     private $idAlumno;
 
@@ -37,6 +37,11 @@ class Musico
 
     #[ORM\Column(name: 'ID_BANDA', type: 'integer')]
     private $idBanda;
+
+    public function __toString()
+    {
+        return $this->Nombre;
+    }
 
     public function getId(): ?int
     {
