@@ -12,7 +12,6 @@ class MusicoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('idSocio')
             ->add('Nombre')
             ->add('primerApellido')
             ->add('segundoApellido')
