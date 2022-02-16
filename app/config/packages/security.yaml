@@ -20,7 +20,6 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            # custom_authenticator: App\Security\AppCustomAuthenticator
             json_login:
                 # api_login is a route we will create below
                 check_path: api_login
