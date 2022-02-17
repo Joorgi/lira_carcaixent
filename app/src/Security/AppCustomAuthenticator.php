@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/api/')]
 class ApiLoginController extends AbstractController
 {
-  #[Route('login', name: 'api_login')]
+  #[Route('login', name: 'api_login', methods: ['POST'])]
   public function index(?UserInterface $user): Response
   {
     if (null === $user) {
