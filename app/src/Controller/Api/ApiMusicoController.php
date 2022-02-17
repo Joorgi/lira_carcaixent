@@ -29,7 +29,7 @@ class ApiMusicoController extends AbstractController
       $data[] = [
         'id' => $musico->getId(),
         'id_alumno' => $musico->getIdAlumno()->getNombre(),
-        'id_socio' => $musico->getIdSocio()->getNombre(),
+        'id_socio' => $musico->getIdSocio(),
         'nombre' => $musico->getNombre(),
         'primer_apellido' => $musico->getPrimerApellido(),
         'segundo_apellido' => $musico->getSegundoApellido(),
