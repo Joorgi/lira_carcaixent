@@ -52,7 +52,7 @@ class ApiMusicoController extends AbstractController
     $musico = $this->musicoRepository->find($id);
     $data = [
       'id' => $musico->getId(),
-      'id_alumno' => $musico->getIdAlumno(),
+      'id_alumno' => $musico->getIdAlumno()->getNombre(),
       'id_socio' => $musico->getIdSocio(),
       'nombre' => $musico->getNombre(),
       'primer_apellido' => $musico->getPrimerApellido(),
