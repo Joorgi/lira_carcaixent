@@ -10,11 +10,16 @@ class Autor
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(name: 'ID',type: 'integer')]
+    #[ORM\Column(name: 'ID', type: 'integer')]
     private $id;
 
     #[ORM\Column(name: 'NOMBRE', type: 'string', length: 50)]
     private $Nombre;
+
+    public function __toString()
+    {
+        return $this->Nombre;
+    }
 
     public function getId(): ?int
     {

@@ -28,6 +28,11 @@ class Evento
     #[ORM\Column(name: 'ID_PIEZA', type: 'integer')]
     private $idPieza;
 
+    public function __toString()
+    {
+        return $this->Nombre;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

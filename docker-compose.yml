@@ -6,7 +6,7 @@ services:
     image: nginx:latest
     container_name: nginx-server
     volumes:
-      - ./www:/var/www/html
+      - ./www:/usr/share/nginx/html/
     networks:
       - redlira
     ports:

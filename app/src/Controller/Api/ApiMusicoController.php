@@ -28,7 +28,7 @@ class ApiMusicoController extends AbstractController
     foreach ($musicos as $musico) {
       $data[] = [
         'id' => $musico->getId(),
-        'id_alumno' => $musico->getIdAlumno(),
+        'id_alumno' => $musico->getIdAlumno()->getNombre(),
         'id_socio' => $musico->getIdSocio(),
         'nombre' => $musico->getNombre(),
         'primer_apellido' => $musico->getPrimerApellido(),
@@ -51,15 +51,15 @@ class ApiMusicoController extends AbstractController
   {
     $musico = $this->musicoRepository->find($id);
     $data = [
-        'id' => $musico->getId(),
-        'id_alumno' => $musico->getIdAlumno(),
-        'id_socio' => $musico->getIdSocio(),
-        'nombre' => $musico->getNombre(),
-        'primer_apellido' => $musico->getPrimerApellido(),
-        'segundo_apellido' => $musico->getSegundoApellido(),
-        'DNI' => $musico->getDNI(),
-        'id_instrumento' => $musico->getIdInstrumento(),
-        'id_banda' => $musico->getIdBanda(),
+      'id' => $musico->getId(),
+      'id_alumno' => $musico->getIdAlumno()->getNombre(),
+      'id_socio' => $musico->getIdSocio(),
+      'nombre' => $musico->getNombre(),
+      'primer_apellido' => $musico->getPrimerApellido(),
+      'segundo_apellido' => $musico->getSegundoApellido(),
+      'DNI' => $musico->getDNI(),
+      'id_instrumento' => $musico->getIdInstrumento(),
+      'id_banda' => $musico->getIdBanda(),
     ];
 
     if (!$musico) {

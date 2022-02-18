@@ -29,8 +29,8 @@ class ApiPiezaController extends AbstractController
       $data[] = [
         'id' => $pieza->getId(),
         'nombre' => $pieza->getNombre(),
-        'id_autor' => $pieza->getIdAutor(),
-        'id_evento' => $pieza->getIdEvento(),        
+        'id_autor' => $pieza->getIdAutor()->getNombre(),
+        'id_evento' => $pieza->getIdEvento()->getNombre(),
       ];
     }
 
@@ -45,10 +45,10 @@ class ApiPiezaController extends AbstractController
   {
     $pieza = $this->piezaRepository->find($id);
     $data = [
-        'id' => $pieza->getId(),
-        'nombre' => $pieza->getNombre(),
-        'id_autor' => $pieza->getIdAutor(),
-        'id_evento' => $pieza->getIdEvento(),          
+      'id' => $pieza->getId(),
+      'nombre' => $pieza->getNombre(),
+      'id_autor' => $pieza->getIdAutor()->getNombre(),
+      'id_evento' => $pieza->getIdEvento()->getNombre(),
     ];
 
     if (!$pieza) {

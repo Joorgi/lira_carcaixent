@@ -28,9 +28,9 @@ class ApiPartituraController extends AbstractController
     foreach ($partituras as $partitura) {
       $data[] = [
         'id' => $partitura->getId(),
-        'id_pieza' => $partitura->getIdPieza(),
-        'id_instrumento' => $partitura->getIdInstrumento(),
-        'rol_instrumento' => $partitura->getRolInstrumento(),        
+        'id_pieza' => $partitura->getIdPieza()->getNombre(),
+        'id_instrumento' => $partitura->getIdInstrumento()->getNombre(),
+        'rol_fichero' => $partitura->getRolInstrumento(),
         'fichero' => $partitura->getFichero(),
       ];
     }
@@ -46,11 +46,11 @@ class ApiPartituraController extends AbstractController
   {
     $partitura = $this->partituraRepository->find($id);
     $data = [
-        'id' => $partitura->getId(),
-        'id_pieza' => $partitura->getIdPieza(),
-        'id_instrumento' => $partitura->getIdInstrumento(),
-        'rol_instrumento' => $partitura->getRolInstrumento(),        
-        'fichero' => $partitura->getFichero(),
+      'id' => $partitura->getId(),
+      'id_pieza' => $partitura->getIdPieza()->getNombre(), 
+      'id_instrumento' => $partitura->getIdInstrumento()->getNombre(),
+      'rol_fichero' => $partitura->getRolInstrumento(),
+      'fichero' => $partitura->getFichero(),
     ];
 
     if (!$partitura) {

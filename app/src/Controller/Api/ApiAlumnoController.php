@@ -30,10 +30,10 @@ class ApiAlumnoController extends AbstractController
         'id' => $alumno->getId(),
         'nombre' => $alumno->getNombre(),
         'primer_apellido' => $alumno->getPrimerApellido(),
-        'segundo_apellido' => $alumno->getSegundoApellido(),        
+        'segundo_apellido' => $alumno->getSegundoApellido(),
         'fecha_alta' => $alumno->getFechaAlta(),
         'fecha_baja' => $alumno->getFechaBaja(),
-        'id_socio' => $alumno->getIdSocio(),
+        'id_socio' => $alumno->getIdSocio()->getNombre(),
       ];
     }
 
@@ -49,14 +49,14 @@ class ApiAlumnoController extends AbstractController
   {
     $alumno = $this->alumnoRepository->find($id);
     $data = [
-        'id' => $alumno->getId(),
-        'nombre' => $alumno->getNombre(),
-        'primer_apellido' => $alumno->getPrimerApellido(),
-        'segundo_apellido' => $alumno->getSegundoApellido(),
-        'primer_apellido' => $alumno->getPrimerApellido(),
-        'fecha_alta' => $alumno->getFechaAlta(),
-        'fecha_baja' => $alumno->getFechaBaja(),
-        'id_socio' => $alumno->getIdSocio(),
+      'id' => $alumno->getId(),
+      'nombre' => $alumno->getNombre(),
+      'primer_apellido' => $alumno->getPrimerApellido(),
+      'segundo_apellido' => $alumno->getSegundoApellido(),
+      'primer_apellido' => $alumno->getPrimerApellido(),
+      'fecha_alta' => $alumno->getFechaAlta(),
+      'fecha_baja' => $alumno->getFechaBaja(),
+      'id_socio' => $alumno->getIdSocio()->getNombre(),
     ];
 
     if (!$alumno) {
