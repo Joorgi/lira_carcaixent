@@ -30,7 +30,8 @@ class ApiNoticiaController extends AbstractController
     foreach ($noticias as $noticia) {
       $data[] = [
         'titulo' => $noticia->getTitulo(),
-        'fecha' => date_format($noticia->getFecha(), 'd/m/Y')
+        'fecha' => date_format($noticia->getFecha(), 'd/m/Y'),
+        'imagen' => $noticia->getImagen()
       ];
     }
 
