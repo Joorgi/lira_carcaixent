@@ -31,6 +31,7 @@ class ApiNoticiaController extends AbstractController
       $data[] = [
         'titulo' => $noticia->getTitulo(),
         'fecha' => date_format($noticia->getFecha(), 'd/m/Y'),
+        'descripcion' => $noticia->getDescripcion(),
         'imagen' => $noticia->getImagen()
       ];
     }
