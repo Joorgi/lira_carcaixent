@@ -26,6 +26,7 @@ security:
                 username_path: email
             logout:
                 path: app_logout
+            custom_authenticator: App\Security\Authenticator
                 # where to redirect after logout
                 # target: app_any_route
 
