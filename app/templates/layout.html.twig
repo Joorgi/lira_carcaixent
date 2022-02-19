@@ -6,199 +6,213 @@
 				<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo03' aria-controls='navbarTogglerDemo03' aria-expanded='false' aria-label='Toggle navigation'>
 					<span class='navbar-toggler-icon'></span>
 				</button>
-				<a class='navbar-brand' href='/'>
-					<img src='/images/logoLira.png' alt='' style='width: 3rem'>
+				<a class='navbar-brand' href='/home'>
+					<img src='/images/logoLira.png' alt='' style='width: 4rem'>
 				</a>
-				<div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
-					<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle active' href='/' id='navbarDropdown' role='button' data-bs-toggle='dropdown' data-target='#dropdown1' aria-expanded='false'>
-								Noticias
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown' id='dropdown1'>
-								<li>
-									<a class='dropdown-item' href='/admin/noticia/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/noticia/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+				{% if is_granted('ROLE_ADMIN') %}
+					<div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
+						<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle active' href='/' id='navbarDropdown' role='button' data-bs-toggle='dropdown' data-target='#dropdown1' aria-expanded='false'>
+									Noticias
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown' id='dropdown1'>
+									<li>
+										<a class='dropdown-item' href='/admin/noticia/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/noticia/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown2' role='button' data-bs-toggle='dropdown' data-target='#dropdown2' aria-expanded='false'>
-								Bandas
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown2' id='dropdown2'>
-								<li>
-									<a class='dropdown-item' href='/admin/banda/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/banda/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown2' role='button' data-bs-toggle='dropdown' data-target='#dropdown2' aria-expanded='false'>
+									Bandas
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown2' id='dropdown2'>
+									<li>
+										<a class='dropdown-item' href='/admin/banda/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/banda/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown3' role='button' data-bs-toggle='dropdown' data-target='#dropdown3' aria-expanded='false'>
-								Intrumentos
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown3' id='dropdown3'>
-								<li>
-									<a class='dropdown-item' href='/admin/instrumento/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/instrumento/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown3' role='button' data-bs-toggle='dropdown' data-target='#dropdown3' aria-expanded='false'>
+									Intrumentos
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown3' id='dropdown3'>
+									<li>
+										<a class='dropdown-item' href='/admin/instrumento/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/instrumento/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown4' role='button' data-bs-toggle='dropdown' data-target='#dropdown4' aria-expanded='false'>
-								Socios
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown4' id='dropdown4'>
-								<li>
-									<a class='dropdown-item' href='/admin/socio/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/socio/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown4' role='button' data-bs-toggle='dropdown' data-target='#dropdown4' aria-expanded='false'>
+									Socios
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown4' id='dropdown4'>
+									<li>
+										<a class='dropdown-item' href='/admin/socio/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/socio/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown5' role='button' data-bs-toggle='dropdown' data-target='#dropdown5' aria-expanded='false'>
-								Alumnos
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown5' id='dropdown5'>
-								<li>
-									<a class='dropdown-item' href='/admin/alumno/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/alumno/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown5' role='button' data-bs-toggle='dropdown' data-target='#dropdown5' aria-expanded='false'>
+									Alumnos
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown5' id='dropdown5'>
+									<li>
+										<a class='dropdown-item' href='/admin/alumno/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/alumno/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown5' role='button' data-bs-toggle='dropdown' data-target='#dropdown5' aria-expanded='false'>
-								Autores Partituras
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown5' id='dropdown5'>
-								<li>
-									<a class='dropdown-item' href='/admin/autor/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/autor/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown5' role='button' data-bs-toggle='dropdown' data-target='#dropdown5' aria-expanded='false'>
+									Autores Partituras
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown5' id='dropdown5'>
+									<li>
+										<a class='dropdown-item' href='/admin/autor/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/autor/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown6' role='button' data-bs-toggle='dropdown' data-target='#dropdown6' aria-expanded='false'>
-								Piezas Musicales
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown6' id='dropdown6'>
-								<li>
-									<a class='dropdown-item' href='/admin/pieza/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/pieza/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown6' role='button' data-bs-toggle='dropdown' data-target='#dropdown6' aria-expanded='false'>
+									Piezas Musicales
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown6' id='dropdown6'>
+									<li>
+										<a class='dropdown-item' href='/admin/pieza/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/pieza/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown7' role='button' data-bs-toggle='dropdown' data-target='#dropdown7' aria-expanded='false'>
-								Eventos
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown7' id='dropdown7'>
-								<li>
-									<a class='dropdown-item' href='/admin/evento/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/evento/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown7' role='button' data-bs-toggle='dropdown' data-target='#dropdown7' aria-expanded='false'>
+									Eventos
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown7' id='dropdown7'>
+									<li>
+										<a class='dropdown-item' href='/admin/evento/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/evento/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown8' role='button' data-bs-toggle='dropdown' data-target='#dropdown8' aria-expanded='false'>
-								Musicos
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown8' id='dropdown8'>
-								<li>
-									<a class='dropdown-item' href='/admin/musico/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/musico/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown8' role='button' data-bs-toggle='dropdown' data-target='#dropdown8' aria-expanded='false'>
+									Musicos
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown8' id='dropdown8'>
+									<li>
+										<a class='dropdown-item' href='/admin/musico/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/musico/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown9' role='button' data-bs-toggle='dropdown' data-target='#dropdown9' aria-expanded='false'>
-								Partituras
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown9' id='dropdown9'>
-								<li>
-									<a class='dropdown-item' href='/admin/partitura/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/partitura/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown9' role='button' data-bs-toggle='dropdown' data-target='#dropdown9' aria-expanded='false'>
+									Partituras
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown9' id='dropdown9'>
+									<li>
+										<a class='dropdown-item' href='/admin/partitura/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/partitura/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-						<li class='nav-item dropdown'>
-							<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown10' role='button' data-bs-toggle='dropdown' data-target='#dropdown10' aria-expanded='false'>
-								Usuarios
-							</a>
-							<ul class='dropdown-menu' aria-labelledby='navbarDropdown10' id='dropdown10'>
-								<li>
-									<a class='dropdown-item' href='/admin/usuario/new'>Crear</a>
-								</li>
-								<li>
-									<a class='dropdown-item' href='/admin/usuario/all'>Listar</a>
-								</li>
-							</ul>
-						</li>
+							<li class='nav-item dropdown'>
+								<a class='nav-link dropdown-toggle' href='/' id='navbarDropdown10' role='button' data-bs-toggle='dropdown' data-target='#dropdown10' aria-expanded='false'>
+									Usuarios
+								</a>
+								<ul class='dropdown-menu' aria-labelledby='navbarDropdown10' id='dropdown10'>
+									<li>
+										<a class='dropdown-item' href='/admin/usuario/new'>Crear</a>
+									</li>
+									<li>
+										<a class='dropdown-item' href='/admin/usuario/all'>Listar</a>
+									</li>
+								</ul>
+							</li>
 
-
-					</ul>
+							<li class='nav-item'>
+								<a class='nav-link' href='/logout'>
+									<img src='/images/svg/logout.svg' alt='ilustracion para hacer logout' style='width:2em'>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
+			{% endif %}
 		</nav>
 	</header>
 
 	<section>
-		<div class='container min-vh-100'>
+		<div class='container-fluid vh-100'>
 			{% block formSection %}{% endblock %}
 		</div>
 	</section>
 
 
-	<div class='container-fluid'>
-		<footer>
-			<div class='row bg-danger'>
-				<div class='col-xl-12 text-center d-flex justify-content-center align-self-center'>
-					<ul class='list-inline pt-3'>
-						<li class='list-inline-item'>
-							<i class='pr-2 fa fa-facebook fa-2x'></i>
-						</li>
-						<li class='list-inline-item'>
-							<i class='pr-2 fa fa-twitter fa-2x'></i>
-						</li>
-						<li class='list-inline-item'>
-							<i class='pr-2 fa fa-linkedin fa-2x'></i>
-						</li>
-						<li class='list-inline-item'>
-							<i class='fa fa-instagram fa-2x'></i>
-						</li>
-					</ul>
+	<footer class='p-3' style='background-color : #A52A2A'>
+		<div class='container-fluid'>
+			<div class='row'>
+				<div class='col-12'>
+					<h3 class'text-dark'>Lira carcaixent 2022</h3>
 				</div>
 			</div>
-		</footer>
-	</div>
+		</div>
+	</footer>
+
 {% endblock %}
+
+
+{# 
+			<div class='container-fluid'>
+				<div class='row justify-content-center text-light'>
+					<div class='col-auto'>
+						<div class='row justify-content-center'>
+							<div class='col-1 fa-2x m-1'>
+								<a href='#'>
+									<i class='fa fa-facebook' aria-hidden='true'></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='col text-center text-light'>
+					LIRA CARCAIXENTINA CARCAIXENT (Valencia)
+				</div>
+			</div>
+ #}

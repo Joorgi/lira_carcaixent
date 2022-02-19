@@ -1,8 +1,9 @@
 {% extends "layout.html.twig" %}
 
 {% block formSection %}
-	<h1 class='text-center'>Bienvenido</h1>
-	<div class='mt-5'>
-		<img src='/uploads/noticia_images/620f5118d148e.png' alt='' style='height: 35rem'>
+	<h1 class='text-center'>Bienvenido
+		{{userName}}</h1>
+	<div class='col-md-9 col-lg-6 col-xl-5'>
+		<img src='/images/svg/mainAdmin.svg' class='img-fluid' alt='Sample image'>
 	</div>
 {% endblock %}
