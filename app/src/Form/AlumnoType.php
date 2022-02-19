@@ -23,6 +23,7 @@ class AlumnoType extends AbstractType
             ->add('fechaBaja', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
+                'required' => false
             ])
             ->add('idSocio');
     }

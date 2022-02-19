@@ -18,9 +18,9 @@
 
 				{% if app.user %}
 					<div class='mb-3'>
-						You are logged in as
+						Has iniciado sesión como
 						{{ app.user.email }},
-						<a href="{{ path('app_logout') }}">Logout</a>
+						<a href="{{ path('app_logout') }}">Cerrar sesión</a>
 					</div>
 				{% endif %}
 
@@ -34,11 +34,11 @@
 				<!-- Password input -->
 				<div class='form-outline mb-3'>
 					<input type='password' name='password' id='inputPassword' class='form-control form-control-lg' placeholder='Introducir la contraseña' autocomplete='current-password' required/>
-					<label class='form-label' for='inputPassword'>Password</label>
+					<label class='form-label' for='inputPassword'>Contraseña</label>
 					<input type='hidden' name='_csrf_token' value="{{ csrf_token('authenticate') }}">
 				</div>
 				<div class='text-center text-lg-start mt-4 pt-2'>
-					<button type='submit' class='btn btn-primary btn-lg' style='padding-left: 2.5rem; padding-right: 2.5rem;'>Login</button>
+					<button type='submit' class='btn btn-primary btn-lg' style='padding-left: 2.5rem; padding-right: 2.5rem;'>Acceder</button>
 				</div>
 			</form>
 		</div>

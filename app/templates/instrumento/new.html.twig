@@ -1,11 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'main.html.twig' %}
 
 {% block title %}New Instrumento{% endblock %}
 
-{% block body %}
-    <h1>Create new Instrumento</h1>
-
+{% block formSection %}
+	<h1 class='text-center mt-5'>Añadir nuevo instrumento</h1>
     {{ include('instrumento/_form.html.twig') }}
-
-    <a href="{{ path('instrumento_index') }}">back to list</a>
 {% endblock %}

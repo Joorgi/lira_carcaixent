@@ -1,11 +1,9 @@
-{% extends 'base.html.twig' %}
+{% extends 'main.html.twig' %}
 
-{% block title %}New Musico{% endblock %}
+{% block title %}New Musico
+{% endblock %}
 
-{% block body %}
-    <h1>Create new Musico</h1>
-
-    {{ include('musico/_form.html.twig') }}
-
-    <a href="{{ path('musico_index') }}">back to list</a>
+{% block formSection %}
+	<h1 class='text-center mt-5'>Añadir nuevo musico</h1>
+	{{ include('musico/_form.html.twig') }}
 {% endblock %}
