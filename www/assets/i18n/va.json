@@ -1,0 +1,34 @@
+{
+  "menu": {
+    "inicio.texto" : "Inici",
+    "escuela.texto" : "Escola",
+    "bandas.texto" : "Bandes",
+    "eventos.texto" : "Esdeveniments",
+    "contacto.texto" : "Contacte"
+  },
+  "login" : {
+    "acceso.texto" : "Accés",
+    "email.texto" : "Correu electrònic",
+    "contrasena.texto" : "Contrasenya"
+  },
+  "contacto" : {
+    "contacto.texto" : "Contacte",
+    "nombre.texto" : "Nom",
+    "apellidos.texto" : "Cognoms",
+    "email.texto" : "Correu electrònic",
+    "telefono.texto" : "Telèfon",
+    "asunto.texto" : "Assumpte",
+    "mensaje.texto" : "Missatge",
+    "enviar.texto" : "Enviar",
+    "limpiar.texto" : "Netejar"
+  },
+  "admin" : {
+    "admin.texto" : "Administració",
+    "usuarios.texto" : "Usuaris",
+    "escuela.texto" : "Escola",
+    "bandas.texto" : "Bandes",
+    "eventos.texto" : "Esdeveniments",
+    "contacto.texto" : "Contacte",
+    "salir.texto" : "Eixir"
+  }
+}
