@@ -29,5 +29,9 @@
 			<a href="{{ path('socio_edit', {'id': article.id}) }}">edit</a>
 		</td>
 	</tr>
+{% else %}
+	<tr>
+		<td colspan='6'>no records found</td>
+	</tr>
 {% endfor %}</table>{# display navigation #}<div class='navigation d-flex justify-content-center'>
 {{ knp_pagination_render(pagination) }}</div>{% endblock %}

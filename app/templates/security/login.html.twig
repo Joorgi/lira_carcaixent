@@ -5,42 +5,43 @@
 
 {% block formSection %}
 
+	<article>
+		<div class='row d-flex justify-content-center align-items-center h-100'>
+			<div class='col-md-9 col-lg-6 col-xl-5'>
+				<img src='/images/svg/mainAdmin.svg' class='img-fluid' alt='Sample image'>
+			</div>
+			<div class='col-md-8 col-lg-6 col-xl-4 offset-xl-1'>
+				<form method='post'>
+					{% if error %}
+						<div class='alert alert-danger'>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
 
-	<div class='row d-flex justify-content-center align-items-center h-100'>
-		<div class='col-md-9 col-lg-6 col-xl-5'>
-			<img src='/images/svg/mainAdmin.svg' class='img-fluid' alt='Sample image'>
-		</div>
-		<div class='col-md-8 col-lg-6 col-xl-4 offset-xl-1'>
-			<form method='post'>
-				{% if error %}
-					<div class='alert alert-danger'>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-				{% endif %}
+					{% if app.user %}
+						<div class='mb-3'>
+							Has iniciado sesión como
+							{{ app.user.email }},
+							<a href="{{ path('app_logout') }}">Cerrar sesión</a>
+						</div>
+					{% endif %}
 
-				{% if app.user %}
-					<div class='mb-3'>
-						You are logged in as
-						{{ app.user.email }},
-						<a href="{{ path('app_logout') }}">Logout</a>
+					<!-- Email input -->
+					<div class='form-outline mb-4'>
+						<input type='email' value="{{ last_username }}" name='email' id='inputEmail' class='form-control form-control-lg' autocomplete='email' placeholder='Introducir correo electrónico válido' required autofocus/>
+
+						<label for='inputMail' class='form-label' for='form3Example3'>Correu electronic</label>
 					</div>
-				{% endif %}
 
-				<!-- Email input -->
-				<div class='form-outline mb-4'>
-					<input type='email' value="{{ last_username }}" name='email' id='inputEmail' class='form-control form-control-lg' autocomplete='email' placeholder='Introducir correo electrónico válido' required autofocus/>
-
-					<label for='inputMail' class='form-label' for='form3Example3'>Correu electronic</label>
-				</div>
-
-				<!-- Password input -->
-				<div class='form-outline mb-3'>
-					<input type='password' name='password' id='inputPassword' class='form-control form-control-lg' placeholder='Introducir la contraseña' autocomplete='current-password' required/>
-					<label class='form-label' for='inputPassword'>Password</label>
-					<input type='hidden' name='_csrf_token' value="{{ csrf_token('authenticate') }}">
-				</div>
-				<div class='text-center text-lg-start mt-4 pt-2'>
-					<button type='submit' class='btn btn-primary btn-lg' style='padding-left: 2.5rem; padding-right: 2.5rem;'>Login</button>
-				</div>
-			</form>
+					<!-- Password input -->
+					<div class='form-outline mb-3'>
+						<input type='password' name='password' id='inputPassword' class='form-control form-control-lg' placeholder='Introducir la contraseña' autocomplete='current-password' required/>
+						<label class='form-label' for='inputPassword'>Contraseña</label>
+						<input type='hidden' name='_csrf_token' value="{{ csrf_token('authenticate') }}">
+					</div>
+					<div class='text-center text-lg-start mt-4 pt-2'>
+						<button type='submit' class='btn btn-primary btn-lg' style='padding-left: 2.5rem; padding-right: 2.5rem;'>Acceder</button>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
+	</article>
 {% endblock %}

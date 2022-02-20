@@ -4,9 +4,6 @@
 {% endblock %}
 
 {% block formSection %}
-	<h1>Create new Socio</h1>
-
+	<h1 class='text-center mt-5'>Añadir nuevo socio</h1>
 	{{ include('socio/_form.html.twig') }}
-
-	<a href="{{ path('socio_index') }}">back to list</a>
 {% endblock %}

@@ -1,13 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'main.html.twig' %}
 
 {% block title %}Edit Socio{% endblock %}
 
-{% block body %}
-    <h1>Edit Socio</h1>
-
-    {{ include('socio/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('socio_index') }}">back to list</a>
-
-    {{ include('socio/_delete_form.html.twig') }}
+{% block formSection %}
+	<h1 class='text-center mt-5'>Editar socio</h1>
+    {{ include('socio/_form.html.twig', {'button_label': 'Actualizar'}) }}
 {% endblock %}

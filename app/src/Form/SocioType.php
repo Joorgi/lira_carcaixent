@@ -24,6 +24,7 @@ class SocioType extends AbstractType
             ->add('fechaBaja', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
+                'required' => false
             ])
             ->add('Tipo');
     }

@@ -3,9 +3,6 @@
 {% block title %}New Banda{% endblock %}
 
 {% block formSection %}
-    <h1>Create new Banda</h1>
-
+	<h1 class='text-center mt-5'>Añadir nueva banda</h1>
     {{ include('banda/_form.html.twig') }}
-
-    <a href="{{ path('banda_index') }}">back to list</a>
 {% endblock %}

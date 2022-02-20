@@ -1,4 +1,39 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<article>
+	<div class='row'>
+		<div class='col-xl-12 col-lg-12 text-center' style='height: 707px;'>
+			{{ form_start(form, {'attr': {'class': 'mt-5 offset-4'}}) }}
+			<div class='input-group mb-6 pb-5'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.email, 'EMAIL') }}
+					{{ form_widget(form.email,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+			</div>
+
+			<div class='input-group mb-6 pb-5'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.roles, 'ROL') }}
+					{{ form_widget(form.roles,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+			</div>
+			<div class='input-group mb-6 pb-5'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.password, 'CONTRASEÑA') }}
+					{{ form_widget(form.password,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+			</div>
+			<div class='input-group mb-6 pb-3'>
+				<div class='form-group col-md-6'>
+					{{ form_label(form.idMusico, 'MUSICO ASOCIADO') }}
+					{{ form_widget(form.idMusico,{'attr': {'class': 'required input_field form-control'}}) }}
+				</div>
+
+				<div class='input-group mt-5'>
+					<div class='form-group col-md-6'>
+						<button class='btn btn-primary btn-lg'>{{ button_label|default('Guardar') }}</button>
+					</div>
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+</article>
